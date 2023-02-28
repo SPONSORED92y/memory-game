@@ -18,6 +18,7 @@ class Header extends Component {
     }
     clickCard = (id) => {
         if (this.state.memory[id] === 0) {
+            console.log("err22");
             // valid
             this.setState({
                 score: this.state.score + 1,
@@ -28,12 +29,14 @@ class Header extends Component {
                     return val;
                 })
             });
-            if (this.state.score > this.state.best) {
+            if (this.state.score + 1 > this.state.best) {
+                console.log("err34");
                 this.setState({
-                    best: this.state.score,
+                    best: this.state.score + 1,
                 });
             }
         } else {
+            console.log("WA");
             // invalid
             this.setState({
                 score: 0,
